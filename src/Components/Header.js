@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import icon from "../Assets/youtube.png";
 
 export default function Headers(){
@@ -8,8 +8,6 @@ export default function Headers(){
      <img className="h-8" src={icon} alt="icon"/>
      <h2 className="text-white text-[1.5rem] font-bold">YouTube</h2>
    </div>
-
-   
     </header>
 
 }
