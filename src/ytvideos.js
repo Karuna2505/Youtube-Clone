@@ -26,7 +26,7 @@ const YouTubeDataFetcher = () => {
         const fetchYouTubeData = async () => {
           try {
             const response = await fetch(
-              `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&q=${query}&part=snippet&maxResults=20`
+              `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&q=${query}&part=snippet&maxResults=50`
             );
             const data = await response.json();
             setVideos(data.items);
@@ -39,7 +39,8 @@ const YouTubeDataFetcher = () => {
       }, [query]);
     
       return (
-        <div className='flex flex-wrap gap-8'>
+        <div className='flex-col'>
+
         <div>
      <input
         type="text"
@@ -57,25 +58,28 @@ const YouTubeDataFetcher = () => {
         Search
       </button>
       </div>
+
+
+      <div className='flex flex-wrap gap-8 '>
           {videos.map((video) => (
-            <div className='flex flex-col'>
-            <div key={video.id.videoId}>
+            <div key={video.id.videoId} className='h-72 w-60'>
               <iframe
-                width="350"
-                height="250"
+                width="250"
+                height="200"
                 src={`https://www.youtube.com/embed/${video.id.videoId}`}
                 title={video.snippet.title}
                 frameBorder="0"
                 allowFullScreen
               ></iframe>
-            </div>
             <div>
-               <h1 className='text-white w-96'>{video.snippet.title}</h1>
-               <h5 className='text-white w-96'>-{video.snippet.channelTitle}</h5>
+               <h1 className='text-white'>{video.snippet.title}</h1>
+               <h5 className='text-white'>-{video.snippet.channelTitle}</h5>
             </div>
           </div>
-            
           ))}
+        </div>
+
+
         </div>
       );
     };
