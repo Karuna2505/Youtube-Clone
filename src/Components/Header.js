@@ -7,6 +7,7 @@ import videoimg from "../Assets/video-call.png";
 import bell from "../Assets/bell.png";
 
 export default function Headers() {
+ 
   return (
     <header className="h-14 flex justify-between px-4">
       <div className="flex items-center">
@@ -28,7 +29,9 @@ export default function Headers() {
           />
         </div>
         <div className="bg-[dimgray] h-8 w-12 rounded-r-3xl  border-y-2 border-r-2 border-white border-opacity-25 px-2 ">
+         <button type="button">
           <img src={searchbutton} alt="search_button" className="p-2" />
+          </button>
         </div>
         <div className="h-8 w-8 rounded-full ml-4 bg-[dimgray]">
           <img src={mic} alt="mic" className="h-6 m-1 p-0.5" />
