@@ -3,25 +3,8 @@ const API_KEY = 'AIzaSyCnZuxN3xcaCWwr-f0m8Z24mD5XpUU3xFs';
 
 const YouTubeDataFetcher = () => {
       const [videos, setVideos] = useState([]);
-
-      const [value,setvalue]=useState("");
       const [query,setquery]=useState("");
 
-      function handleChange(event){
-        setvalue(event.target.value);
-      }
-
-      function handleclick(){
-          setquery(value);
-      }
-
-      function handlekey(event){
-        console.log(event.key);
-          if(event.key === "Enter"){
-            handleclick();
-          }
-      }
-      
       useEffect(() => {
         const fetchYouTubeData = async () => {
           try {
@@ -41,26 +24,7 @@ const YouTubeDataFetcher = () => {
       return (
         <div className='flex-col'>
 
-        <div>
-     <input
-        type="text"
-        placeholder="Search..."
-        className=" rounded-l-full"
-        onChange={handleChange}
-        onKeyDown={handlekey}
-      />
-      <button
-        type="button"
-        className=" text-white rounded-r-full"
-        onClick={handleclick}
-        onKeyDown={handlekey}
-      >
-        Search
-      </button>
-      </div>
-
-
-      <div className='flex flex-wrap gap-8 '>
+      <div className='flex flex-wrap gap-8 m-4'>
           {videos.map((video) => (
             <div key={video.id.videoId} className='h-72 w-60'>
               <iframe
@@ -72,8 +36,9 @@ const YouTubeDataFetcher = () => {
                 allowFullScreen
               ></iframe>
             <div>
-               <h1 className='text-white'>{video.snippet.title}</h1>
-               <h5 className='text-white'>-{video.snippet.channelTitle}</h5>
+               <span className='text-white text-base'>{video.snippet.title}</span>
+               <br />
+               <span className='text-white opacity-70 text-base'>{video.snippet.channelTitle}</span>
             </div>
           </div>
           ))}

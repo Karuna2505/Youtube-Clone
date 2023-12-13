@@ -1,27 +1,50 @@
 import React from "react";
+import styled from 'styled-components';
 import home from "../Assets/home.png";
 import subscribe from "../Assets/subscribe.png";
 import video from "../Assets/video.png";
 
+const StyledDiv=styled.div`
+  height:73px;
+  width:55px;
+  border-radius:10%;
+  padding:14px 0;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  &:hover{
+    background-color:rgb(255,255,255,0.2);
+  }
+
+  img {
+    height: 16px;
+    width: 16px;
+  }
+
+  span {
+    font-size: 0.6rem; /* Equivalent to text-xs in Tailwind */
+    font-weight: normal; /* Equivalent to font-normal in Tailwind */
+    padding:.3rem;
+  }
+`
+
 function MiniGuide() {
+  const items = [
+    { image: home, alt: 'Home', label: 'Home' },
+    { image: subscribe, alt: 'Subscribe', label: 'Shorts' },
+    { image: subscribe, alt: 'Subscribe', label: 'Subscriptions' },
+    { image: video, alt: 'Video', label: 'You' },
+  ];
   return (
     <div className="text-white w-16 flex flex-col items-center px-2">
-      <div className="h-[73px] py-4 flex flex-col justify-center items-center">
-        <img src={home} alt="Home" className="h-4 w-4"/>
-        <span className="text-xs font-normal">Home</span>
-      </div>
-      <div className="h-[73px] py-4 flex flex-col justify-center items-center">
-        <img src={subscribe} alt="Subscribe" className="h-4 w-4"/>
-        <span className="text-xs font-normal">Shorts</span>
-      </div>
-      <div className="h-[73px] py-4 flex flex-col justify-center items-center">
-        <img src={subscribe} alt="Subscribe" className="h-4 w-4"/>
-        <span className="text-xs font-normal">Subscriptions</span>
-      </div>
-      <div className="h-[73px] py-4 flex flex-col justify-center items-center">
-        <img src={video} alt="video" className="h-4 w-4"/>
-        <span className="text-xs font-normal">You</span>
-      </div>
+       {items.map((item, index) => (
+        <StyledDiv key={index}>
+          <img src={item.image} alt={item.alt} />
+          <span>{item.label}</span>
+        </StyledDiv>
+      ))}
     </div>
   );
 }

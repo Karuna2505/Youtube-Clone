@@ -8,11 +8,11 @@ function App() {
   return (
     <>
     <Header />
-    <Content />
     <div className="flex">
     <MiniGuide />
-    <div className="flex flex-row p-4">
-    <YTvideos />
+    <div className="flex flex-col">
+       <Content />
+       <YTvideos />
     </div>
     </div>
     </>
