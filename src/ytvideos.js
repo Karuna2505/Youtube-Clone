@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 const API_KEY = 'AIzaSyCnZuxN3xcaCWwr-f0m8Z24mD5XpUU3xFs'; 
 
-const YouTubeDataFetcher = ({update,query}) => {
+const YouTubeDataFetcher = ({query}) => {
       const [videos, setVideos] = useState([]);
      
       useEffect(() => {
