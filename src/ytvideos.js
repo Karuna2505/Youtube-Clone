@@ -3,13 +3,12 @@ const API_KEY = 'AIzaSyCnZuxN3xcaCWwr-f0m8Z24mD5XpUU3xFs';
 
 const YouTubeDataFetcher = () => {
       const [videos, setVideos] = useState([]);
-      const [query,setquery]=useState("");
-
+     
       useEffect(() => {
         const fetchYouTubeData = async () => {
           try {
             const response = await fetch(
-              `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&q=${query}&part=snippet&maxResults=50`
+              `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&part=snippet&maxResults=50`
             );
             const data = await response.json();
             setVideos(data.items);
@@ -19,7 +18,7 @@ const YouTubeDataFetcher = () => {
         };
     
         fetchYouTubeData();
-      }, [query]);
+      }, []);
     
       return (
         <div className='flex-col'>

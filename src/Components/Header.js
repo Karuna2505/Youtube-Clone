@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 import icon from "../Assets/youtube.png";
 import menu from "../Assets/menu.png";
 import searchbutton from "../Assets/search.png";
@@ -7,20 +7,6 @@ import videoimg from "../Assets/video-call.png";
 import bell from "../Assets/bell.png";
 
 export default function Headers() {
-  const [value,setValue]=useState("");
-  const [query,setQuery]=useState("");
-  function handleChange(event){
-     setValue(event.target.value);
-  }
-
-  function handleClick(){
-     setQuery(value);
-  }
-  function handleKey(event){
-       if(event.key==="Enter"){
-          handleClick();
-       }
-  }
   return (
     <header className="h-14 flex justify-between px-3 w-screen">
       <div className="flex items-center">
@@ -40,12 +26,11 @@ export default function Headers() {
             type="search"
             placeholder="Search"
             className="w-[29rem] h-8 rounded-l-3xl bg-inherit border-2 border-white border-opacity-25 px-4 text-white"
-            onChange={handleChange}
-            onKeyDown={handleKey}
+            
           />
         </div>
         <div className="bg-[rgb(255,255,255,0.15)] h-8 w-12 rounded-r-3xl  border-y-2 border-r-2 border-white border-opacity-25 px-2 ">
-         <button type="button" onClick={handleClick} onKeyDown={handleKey}>
+         <button type="button">
           <img src={searchbutton} alt="search_button" className="p-2" />
           </button>
         </div>

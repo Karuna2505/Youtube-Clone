@@ -24,8 +24,8 @@ const StyledDiv=styled.div`
   }
 
   span {
-    font-size: 0.6rem; /* Equivalent to text-xs in Tailwind */
-    font-weight: normal; /* Equivalent to font-normal in Tailwind */
+    font-size: 0.6rem; 
+    font-weight: normal;
     padding:.3rem;
   }
 `
