@@ -20,7 +20,7 @@ export default function Headers({update}) {
        }
   }
   return (
-    <header className="h-14 flex justify-between px-3 w-screen">
+    <header className="h-14 flex justify-between px-3 ">
       <div className="flex items-center">
         <div className="py-2.5 px-2 mr-2 h-10 w-10 rounded-full hover:bg-[rgb(255,255,255,0.2)]">
           <img src={menu} alt="menu icon" className="h-5 w-5" />

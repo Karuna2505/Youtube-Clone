@@ -12,7 +12,7 @@ function App() {
   }
   return (
     <>
-    <Header update={update} query={query}/>
+    <Header update={update} query={query}/>\
     <div className="flex">
     <MiniGuide />
     <div className="flex flex-col">
