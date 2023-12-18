@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import home from "../Assets/home.png";
 import subscribe from "../Assets/subscribe.png";
 import video from "../Assets/video.png";
+import shorts from "../Assets/shorts.png";
 
 const StyledDiv=styled.div`
   height:73px;
@@ -33,7 +34,7 @@ const StyledDiv=styled.div`
 function MiniGuide() {
   const items = [
     { image: home, alt: 'Home', label: 'Home' },
-    { image: subscribe, alt: 'Subscribe', label: 'Shorts' },
+    { image: shorts, alt: 'Subscribe', label: 'Shorts' },
     { image: subscribe, alt: 'Subscribe', label: 'Subscriptions' },
     { image: video, alt: 'Video', label: 'You' },
   ];
