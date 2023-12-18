@@ -5,8 +5,14 @@ import searchbutton from "../Assets/search.png";
 import mic from "../Assets/mic.png";
 import videoimg from "../Assets/video-call.png";
 import bell from "../Assets/bell.png";
+import User from "./User";
 
 export default function Headers({update}) {
+  const [isExpanded,setExpanded]=useState(false);
+  const toggleExpand=()=>{
+    setExpanded(!isExpanded);
+  }
+
   const [value,setValue]=useState("");
   function handleSearch(event){
     setValue(event.target.value);
@@ -20,24 +26,24 @@ export default function Headers({update}) {
        }
   }
   return (
-    <header className="h-14 flex justify-between px-3 ">
+    <header className="h-12 flex justify-between px-3 ">
       <div className="flex items-center">
         <div className="py-2.5 px-2 mr-2 h-10 w-10 rounded-full hover:bg-[rgb(255,255,255,0.2)]">
           <img src={menu} alt="menu icon" className="h-5 w-5" />
         </div>
         <div className="flex items-center h-5 w-[5.5rem]">
           <img src={icon} alt="youtube_icon" className="h-6" />
-          <h1 className="text-white font-semibold text-lg pl-1 pb-2">YouTube<span className="align-super text-[0.7rem] p-1 text-white opacity-70">IN</span></h1>
+          <h1 className="text-white font-semibold text-base pl-0.5 pb-2 font-['Oswald']">YouTube<span className="align-super text-[0.5rem] p-1 text-white opacity-70">IN</span></h1>
           
         </div>
       </div>
 
-      <div className="flex m-3">
+      <div className="flex m-2">
         <div>
           <input
             type="search"
             placeholder="Search"
-            className="w-[29rem] h-8 rounded-l-3xl bg-inherit border-2 border-white border-opacity-25 px-4 text-white"
+            className="w-[27rem] h-8 rounded-l-3xl bg-inherit border-2 border-white border-opacity-25 px-4 text-white"
             onChange={handleSearch}
             onKeyDown={handleKey}
           />
@@ -47,15 +53,22 @@ export default function Headers({update}) {
           <img src={searchbutton} alt="search_button" className="p-2" />
           </button>
         </div>
-        <div className="h-8 w-8 rounded-full ml-4 bg-[rgb(255,255,255,0.15)] hover:bg-[rgb(255,255,255,0.3)]">
-          <img src={mic} alt="mic" className="h-6 m-1 p-0.5" />
+        <div className="h-8 w-8 rounded-full ml-4 bg-[rgb(255,255,255,0.15)] hover:bg-[rgb(255,255,255,0.3)] flex justify-center items-center">
+          <img src={mic} alt="mic" className="h-4" />
         </div>
       </div>
 
-      <div className="flex m-4">
-        <img src={videoimg} alt="video_icon" className="h-6 pr-4" />
+      <div className="flex m-3">
+      <img src={videoimg} alt="video_icon" className="h-6 pr-4" />
         <img src={bell} alt="bell_icon" className="h-6 pr-4" />
-        <div className="bg-white h-6 w-6 rounded-full"></div>
+        <button onClick={toggleExpand} className="bg-indigo-700 rounded-full w-6">
+         <span className='font-bold text-white text-base'>K</span>
+         {isExpanded && (
+          <div className="overlay">
+          <User />
+          </div>
+         )}
+        </button>
       </div>
     </header>
   );

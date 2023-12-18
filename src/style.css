@@ -7,3 +7,18 @@ body{
     background-color: #000;
 }
 
+.overlay{
+   position: absolute;
+   width: 15rem;
+   height: 34rem;
+   background-color: #212121;
+   z-index: 1000;
+   top: 3rem;
+   left: 93rem;
+   border-radius: 1rem;
+   display: flex;
+}
+
+p{
+    font-size:small;
+}
