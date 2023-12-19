@@ -19,7 +19,7 @@ function User() {
       <>
         <div className="text-white w-full flex flex-col justify-evenly">
          <div className='flex'>
-            <div className='h-10 w-10 bg-indigo-900 rounded-full flex justify-center items-center mx-4'>
+            <div className='h-8 w-8 bg-indigo-900 rounded-full flex justify-center items-center mx-4'>
                 <p className='!text-xl'>K</p>
             </div>
             <div>
@@ -83,11 +83,7 @@ function User() {
             <img src={keyboard} alt='keyboard' className='mx-5'/> 
             <p>Keyboard Shortcuts</p>
          </div>
-            
-            
-            
-            
-           
+             
          </div>
          <hr />
          <div>
