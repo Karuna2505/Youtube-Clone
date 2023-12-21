@@ -22,13 +22,12 @@ const YouTubeDataFetcher = ({query}) => {
     
       return (
         <div className='flex-col'>
-
-      <div className='flex flex-wrap gap-8 m-4'>
+      <div className='flex flex-wrap gap-8 my-3 mx-2'>
           {videos.map((video) => (
             <div key={video.id.videoId} className='h-72 w-60'>
               <iframe
                 width="250"
-                height="200"
+                height="180"
                 src={`https://www.youtube.com/embed/${video.id.videoId}`}
                 title={video.snippet.title}
                 frameBorder="0"

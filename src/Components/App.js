@@ -15,7 +15,7 @@ function App() {
     <Header update={update} query={query}/>
     <div className="flex">
     <MiniGuide />
-    <div className="flex flex-col">
+    <div className="flex flex-col mx-4 my-2">
        <Content />
        <YTvideos update={update} query={query}/>
     </div>

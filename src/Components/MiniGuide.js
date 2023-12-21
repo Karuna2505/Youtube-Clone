@@ -6,10 +6,10 @@ import video from "../Assets/video.png";
 import shorts from "../Assets/shorts.png";
 
 const StyledDiv=styled.div`
-  height:73px;
-  width:55px;
+  height:60px;
+  width:53px;
   border-radius:10%;
-  padding:14px 0;
+  padding-top:0.5rem;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -20,12 +20,12 @@ const StyledDiv=styled.div`
   }
 
   img {
-    height: 16px;
-    width: 16px;
+    height: 1rem;
+    width: 1rem;
   }
 
   span {
-    font-size: 0.6rem; 
+    font-size: 0.5rem; 
     font-weight: normal;
     padding:.3rem;
   }
@@ -39,7 +39,7 @@ function MiniGuide() {
     { image: video, alt: 'Video', label: 'You' },
   ];
   return (
-    <div className="text-white w-16 flex flex-col items-center px-2">
+    <div className="text-white w-14 flex flex-col items-center px-2">
        {items.map((item, index) => (
         <StyledDiv key={index}>
           <img src={item.image} alt={item.alt} />
