@@ -3,8 +3,7 @@ import icon from "../Assets/youtube.png";
 import menu from "../Assets/menu.png";
 import searchbutton from "../Assets/search.png";
 import mic from "../Assets/mic.png";
-import videoimg from "../Assets/video-call.png";
-import bell from "../Assets/bell.png";
+import dots from "../Assets/dots.png";
 import User from "./User";
 
 export default function Headers({update}) {
@@ -59,16 +58,16 @@ export default function Headers({update}) {
       </div>
 
       <div className="flex m-3">
-      <img src={videoimg} alt="video_icon" className="h-6 pr-4" />
-        <img src={bell} alt="bell_icon" className="h-6 pr-4" />
-        <button onClick={toggleExpand} className="bg-indigo-700 rounded-full w-6">
-         <span className='font-bold text-white text-base'>K</span>
+      <div className="w-14 bg-white rounded-xl mx-2 font-medium text-base px-2.5">login</div>
+        <button onClick={toggleExpand} className="">
+         <img src={dots} alt="menu"/>
          {isExpanded && (
           <div className="overlay">
           <User />
           </div>
          )}
         </button>
+        
       </div>
     </header>
   );
