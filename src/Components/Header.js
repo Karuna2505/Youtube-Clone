@@ -5,9 +5,12 @@ import searchbutton from "../Assets/search.png";
 import mic from "../Assets/mic.png";
 import dots from "../Assets/dots.png";
 import User from "./User";
+import { Link } from "react-router-dom";
+import Speech from "./Speech";
 
 export default function Headers({update}) {
   const [isExpanded,setExpanded]=useState(false);
+  const [listening,setListening]=useState(false);
   const toggleExpand=()=>{
     setExpanded(!isExpanded);
   }
@@ -24,14 +27,17 @@ export default function Headers({update}) {
         handleClick();
        }
   }
+  function handleListen(){
+     setListening(!listening);
+  }
   return (
-    <header className="h-12 flex justify-between px-2.5">
+    <header className="h-12 flex justify-between px-2.5 fixed z-50 bg-black w-screen">
       <div className="flex items-center">
         <div className="py-2.5 px-2 mr-2 h-10 w-10 rounded-full hover:bg-[rgb(255,255,255,0.2)]">
           <img src={menu} alt="menu icon" className="h-5 w-5" />
         </div>
         <div className="flex items-center h-5 w-[5.5rem]">
-          <img src={icon} alt="youtube_icon" className="h-6" />
+          <img src={icon} alt="youtube_icon" className="h-6 icon-container" />
           <h1 className="text-white font-semibold text-base pl-0.5 pb-2 font-['Oswald']">YouTube<span className="align-super text-[0.5rem] p-1 text-white opacity-70">IN</span></h1>
           
         </div>
@@ -52,13 +58,18 @@ export default function Headers({update}) {
           <img src={searchbutton} alt="search_button" className="p-2" />
           </button>
         </div>
+        <button onClick={handleListen}>
         <div className="h-8 w-8 rounded-full ml-4 bg-[rgb(255,255,255,0.15)] hover:bg-[rgb(255,255,255,0.3)] flex justify-center items-center">
-          <img src={mic} alt="mic" className="h-4" />
+        <img src={mic} alt="mic" className="h-4" />
+          {listening ? <Speech onClose={handleListen} update={update}/> : <></>}
         </div>
+        </button>
       </div>
 
       <div className="flex m-3">
+      <Link to='/login'>
       <div className="w-14 bg-white rounded-xl mx-2 font-medium text-base px-2.5">login</div>
+      </Link>
         <button onClick={toggleExpand} className="">
          <img src={dots} alt="menu"/>
          {isExpanded && (
