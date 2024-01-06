@@ -16,7 +16,7 @@ function App() {
     <div className="flex">
     <MiniGuide />
     <div className="flex flex-col mx-4 my-2">
-       <Content />
+       <Content update={update}/>
        <YTvideos update={update} query={query}/>
     </div>
     </div>
