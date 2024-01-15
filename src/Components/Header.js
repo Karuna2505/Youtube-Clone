@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import icon from "../Assets/youtube.png";
 import menu from "../Assets/menu.png";
 import searchbutton from "../Assets/search.png";
@@ -30,20 +30,38 @@ export default function Headers({update}) {
   function handleListen(){
      setListening(!listening);
   }
+
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (event.target.closest('button') === null) {
+        setListening(false);
+        setExpanded(false);
+      }
+    };
+  
+    document.addEventListener('click', handleClickOutside);
+  
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+
   return (
     <header className="h-12 flex justify-between px-2.5 fixed z-50 bg-black w-screen">
       <div className="flex items-center">
         <div className="py-2.5 px-2 mr-2 h-10 w-10 rounded-full hover:bg-[rgb(255,255,255,0.2)]">
           <img src={menu} alt="menu icon" className="h-5 w-5" />
         </div>
+        <Link to="/">
         <div className="flex items-center h-5 w-[5.5rem]">
           <img src={icon} alt="youtube_icon" className="h-6 icon-container" />
           <h1 className="text-white font-semibold text-base pl-0.5 pb-2 font-['Oswald']">YouTube<span className="align-super text-[0.5rem] p-1 text-white opacity-70">IN</span></h1>
-          
         </div>
+        </Link>
       </div>
 
-      <div className="flex m-2">
+      <div className="flex m-2" title="Search">
         <div>
           <input
             type="search"
@@ -58,7 +76,7 @@ export default function Headers({update}) {
           <img src={searchbutton} alt="search_button" className="p-2" />
           </button>
         </div>
-        <button onClick={handleListen}>
+        <button onClick={handleListen} title="Search with your voice">
         <div className="h-8 w-8 rounded-full ml-4 bg-[rgb(255,255,255,0.15)] hover:bg-[rgb(255,255,255,0.3)] flex justify-center items-center">
         <img src={mic} alt="mic" className="h-4" />
           {listening ? <Speech onClose={handleListen} update={update}/> : <></>}

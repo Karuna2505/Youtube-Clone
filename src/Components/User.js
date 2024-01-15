@@ -17,7 +17,7 @@ import keyboard from "../Assets/keyboard.png";
 function User() {
   return (
       <>
-        <div className="text-white w-full flex flex-col justify-evenly">
+        <div className="text-white w-full flex flex-col justify-evenly" onClick={(e) => { e.stopPropagation();}}>
          <div className='flex'>
             <div className='h-8 w-8 bg-indigo-900 rounded-full flex justify-center items-center mx-4'>
                 <p className='!text-xl'>K</p>

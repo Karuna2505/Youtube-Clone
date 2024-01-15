@@ -33,7 +33,7 @@ function Speech({ onClose,update }) {
     <div className='text-white h-[23rem] w-[29rem] fixed top-2 right-[40rem] bg-[#212121] z-50 flex flex-col'  onClick={(e) => {
       e.stopPropagation();
     }}>
-      <div className='flex w-full p-6 justify-between'>
+      <div className='h-[16rem] flex w-full p-6 justify-between'>
       
       {transcript.length>0 ? <h1 className='text-xl pt-6 text-white'>{transcript}</h1> :  <></>}
       
