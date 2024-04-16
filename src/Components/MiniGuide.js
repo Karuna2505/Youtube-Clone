@@ -39,7 +39,7 @@ function MiniGuide() {
     { image: video, alt: 'Video', label: 'You' },
   ];
   return (
-    <div className="text-white w-14 flex flex-col items-center px-2 fixed mt-[3rem]">
+    <div className="text-white w-14 flex flex-col items-center px-2 fixed mt-[3rem] cursor-pointer">
        {items.map((item, index) => (
         <StyledDiv key={index}>
           <img src={item.image} alt={item.alt} />

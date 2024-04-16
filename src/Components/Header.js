@@ -7,6 +7,7 @@ import dots from "../Assets/dots.png";
 import User from "./User";
 import { Link } from "react-router-dom";
 import Speech from "./Speech";
+import SignUpIcon from "../Assets/sing up icon.png"
 
 export default function Headers({update}) {
   const [isExpanded,setExpanded]=useState(false);
@@ -50,7 +51,7 @@ export default function Headers({update}) {
   return (
     <header className="h-12 flex justify-between px-2.5 fixed z-50 bg-black w-screen">
       <div className="flex items-center">
-        <div className="py-2.5 px-2 mr-2 h-10 w-10 rounded-full hover:bg-[rgb(255,255,255,0.2)]">
+        <div className="py-2.5 px-2 mr-2 h-10 w-10 rounded-full hover:bg-[rgb(255,255,255,0.2)] cursor-pointer">
           <img src={menu} alt="menu icon" className="h-5 w-5" />
         </div>
         <Link to="/">
@@ -85,10 +86,7 @@ export default function Headers({update}) {
       </div>
 
       <div className="flex m-3">
-      <Link to='/login'>
-      <div className="w-14 bg-white rounded-xl mx-2 font-medium text-base px-2.5">login</div>
-      </Link>
-        <button onClick={toggleExpand} className="">
+      <button onClick={toggleExpand} className="">
          <img src={dots} alt="menu"/>
          {isExpanded && (
           <div className="overlay">
@@ -96,7 +94,12 @@ export default function Headers({update}) {
           </div>
          )}
         </button>
-        
+      <Link to='/login' className="flex justify-center items-center">
+      <div className=" rounded-xl font-medium flex border-2 border-white border-opacity-25">
+      <img src={SignUpIcon} alt="SignUpIcon" className="w-5 h-5 mt-1 mx-2"/>
+      <span className="text-[#3ea6ff] mx-1 mb-1">Sign in</span>
+      </div>
+      </Link>
       </div>
     </header>
   );

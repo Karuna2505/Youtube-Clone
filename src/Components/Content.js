@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Content({update}) {
   const categories = [
@@ -6,11 +6,14 @@ function Content({update}) {
     'Lives', 'Soldering', 'B Praak', 'Electronics', 'Indian pop music',
     'Home improvement', 'Dramedy', 'Physics', 'News', 'Comedy','Fashion','Gaming','Job Interviews'
   ];
+  const [selectedCategory,setSelectedCategory]=useState("");
   function handleClick(category){
-    if(category==="All"){
-      update("");
-    }else{
+    if (category === selectedCategory) {
+      update('');
+      setSelectedCategory('');
+    } else {
       update(category);
+      setSelectedCategory(category);
     }
   }
   return (
@@ -19,7 +22,7 @@ function Content({update}) {
       <button key={index} onClick={() => handleClick(category)}>
       <div
         key={index}
-        className={`${index === 0 ? 'bg-white text-black' : 'bg-[rgb(255,255,255,0.16)] text-white'} rounded-md px-2.5 mx-1 font-medium text-xs flex justify-center items-center h-6 hover:bg-[rgb(255,255,255,0.3)]`}
+        className={`${selectedCategory === category ? 'bg-white text-black' : 'bg-[rgb(255,255,255,0.16)] text-white'} rounded-md px-2.5 mx-1 font-medium text-xs flex justify-center items-center h-6 hover:bg-[rgb(255,255,255,0.3)]`}
       >
         {category}
       </div>
