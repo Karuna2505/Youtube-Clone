@@ -6,7 +6,7 @@ function Content({update}) {
     'Lives', 'Soldering', 'B Praak', 'Electronics', 'Indian pop music',
     'Home improvement', 'Dramedy', 'Physics', 'News', 'Comedy','Fashion','Gaming','Job Interviews'
   ];
-  const [selectedCategory,setSelectedCategory]=useState("");
+  const [selectedCategory,setSelectedCategory]=useState("All");
   function handleClick(category){
     if (category === selectedCategory) {
       update('');

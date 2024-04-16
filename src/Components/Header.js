@@ -84,7 +84,6 @@ export default function Headers({update}) {
         </div>
         </button>
       </div>
-
       <div className="flex m-3">
       <button onClick={toggleExpand} className="">
          <img src={dots} alt="menu"/>
