@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import ReactPlayer from 'react-player/youtube'
+
 const API_KEY = 'AIzaSyCnZuxN3xcaCWwr-f0m8Z24mD5XpUU3xFs'; 
 
 const YouTubeDataFetcher = ({query}) => {
@@ -19,20 +21,18 @@ const YouTubeDataFetcher = ({query}) => {
     
         fetchYouTubeData();
       }, [query]);
-    
+
       return (
         <div className='flex-col mt-[6rem] ml-[3rem]'>
       <div className='flex flex-wrap gap-8 my-3 mx-2'>
           {videos.map((video) => (
             <div key={video.id.videoId} className='h-72 w-60'>
-              <iframe
+              <ReactPlayer
                 width="250"
                 height="180"
-                src={`https://www.youtube.com/embed/${video.id.videoId}`}
-                title={video.snippet.title}
-                frameBorder="0"
-                allowFullScreen
-              ></iframe>
+                controls={true}
+                url={`https://www.youtube.com/embed/${video.id.videoId}`}
+              ></ReactPlayer>
             <div>
                <span className='text-white text-base'>{video.snippet.title}</span>
                <br />
