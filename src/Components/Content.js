@@ -13,13 +13,12 @@ function Content({update}) {
   ];
   const [selectedCategory,setSelectedCategory]=useState("All");
   function handleClick(category){
-    if (category === selectedCategory) {
+    if (category === 'All') {
       update('');
-      setSelectedCategory('');
     } else {
       update(category);
-      setSelectedCategory(category);
     }
+    setSelectedCategory(category);
   }
   return (
     <div className='contentDiv fixed pt-3 w-[100rem] h-12 my-8 mx-12 bg-black z-40'>
