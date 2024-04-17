@@ -29,7 +29,7 @@ function Content({update}) {
   navigation
   >
     {categories.map((category,index) => (
-      <SwiperSlide key={index} onClick={() => handleClick(category)} className={`${selectedCategory === category ? 'bg-white text-black' : 'bg-[rgb(255,255,255,0.16)] text-white'} rounded-md !px-2.5 !mx-1 !font-medium !text-xs !flex !justify-center !items-center !h-6 hover:bg-[rgb(255,255,255,0.3)] !w-max`}>{category}</SwiperSlide>
+      <SwiperSlide key={index} onClick={() => handleClick(category)} className={`${selectedCategory === category ? 'bg-white text-black' : 'bg-[rgb(255,255,255,0.16)] text-white'} rounded-md !px-2.5 !mx-1 !font-medium !text-xs !flex !justify-center !items-center !h-6 hover:bg-[rgb(255,255,255,0.3)] !w-max cursor-pointer`}>{category}</SwiperSlide>
     ))}
     
   </Swiper>

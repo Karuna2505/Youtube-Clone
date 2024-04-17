@@ -94,7 +94,7 @@ export default function Headers({update}) {
          )}
         </button>
       <Link to='/login' className="flex justify-center items-center">
-      <div className=" rounded-xl font-medium flex border-2 border-white border-opacity-25">
+      <div className=" rounded-xl font-medium flex border-2 border-white border-opacity-25 mr-3">
       <img src={SignUpIcon} alt="SignUpIcon" className="w-5 h-5 mt-1 mx-2"/>
       <span className="text-[#3ea6ff] mx-1 mb-1">Sign in</span>
       </div>
