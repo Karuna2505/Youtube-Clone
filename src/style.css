@@ -22,3 +22,15 @@ body{
 p{
     font-size:small;
 }
+
+.contentDiv{
+    width: -webkit-fill-available;
+}
+
+.swiper-button-next{
+    color:#f1f1f1 !important;
+}
+
+.swiper-button-prev{
+    color:#f1f1f1 !important;
+}

@@ -24,7 +24,7 @@ const YouTubeDataFetcher = ({query}) => {
 
       return (
         <div className='flex-col mt-[6rem] ml-[3rem]'>
-      <div className='flex flex-wrap gap-8 my-3 mx-2'>
+      <div className='flex flex-wrap gap-4 my-3 mx-2'>
           {videos.map((video) => (
             <div key={video.id.videoId} className='h-72 w-60'>
               <ReactPlayer
